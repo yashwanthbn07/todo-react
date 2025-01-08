@@ -64,18 +64,21 @@ function Home() {
           <ul>
             {tasks.todo.map((t, index) => (
               <li key={index}>
-                {t}
-                <button
-                  onClick={() => moveTask('todo', 'ongoing', t)}
-                >
-                  Move to Ongoing
-                </button>
-                <button
-                  onClick={() => moveTask('todo', 'completed', t)}
-                >
-                  Move to Completed
-                </button>
-              </li>
+              {t}
+              <button
+                className="ongoing-button"
+                onClick={() => moveTask('todo', 'ongoing', t)}
+              >
+                Ongoing
+              </button>
+              <button
+                className="completed-button"
+                onClick={() => moveTask('todo', 'completed', t)}
+              >
+                Completed
+              </button>
+            </li>
+            
             ))}
           </ul>
         </div>
@@ -86,18 +89,21 @@ function Home() {
           <ul>
             {tasks.ongoing.map((t, index) => (
               <li key={index}>
-                {t}
-                <button
-                  onClick={() => moveTask('ongoing', 'todo', t)}
-                >
-                  Move to To-Do
-                </button>
-                <button
-                  onClick={() => moveTask('ongoing', 'completed', t)}
-                >
-                  Move to Completed
-                </button>
-              </li>
+              {t}
+              <button
+                className="todo-button"
+                onClick={() => moveTask('ongoing', 'todo', t)}
+              >
+                To-Do
+              </button>
+              <button
+                className="completed-button"
+                onClick={() => moveTask('ongoing', 'completed', t)}
+              >
+                Completed
+              </button>
+            </li>
+            
             ))}
           </ul>
         </div>
@@ -108,18 +114,21 @@ function Home() {
           <ul>
             {tasks.completed.map((t, index) => (
               <li key={index}>
-                {t}
-                <button
-                  onClick={() => moveTask('completed', 'todo', t)}
-                >
-                  Move to To-Do
-                </button>
-                <button
-                  onClick={() => moveTask('completed', 'ongoing', t)}
-                >
-                  Move to Ongoing
-                </button>
-              </li>
+              {t}
+              <button
+                className="todo-button"
+                onClick={() => moveTask('completed', 'todo', t)}
+              >
+                To-Do
+              </button>
+              <button
+                className="ongoing-button"
+                onClick={() => moveTask('completed', 'ongoing', t)}
+              >
+                Ongoing
+              </button>
+            </li>
+            
             ))}
           </ul>
         </div>
