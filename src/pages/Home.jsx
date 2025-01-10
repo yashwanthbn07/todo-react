@@ -87,7 +87,7 @@ function Home() {
                   className="completed-button"
                   onClick={() => moveTask('todo', 'completed', t)}
                 >
-                  Completed
+                  Done
                 </button>
               </li>
             ))}
@@ -111,7 +111,7 @@ function Home() {
                   className="completed-button"
                   onClick={() => moveTask('ongoing', 'completed', t)}
                 >
-                  Completed
+                  Done
                 </button>
               </li>
             ))}
@@ -125,18 +125,7 @@ function Home() {
             {tasks.completed.map((t, index) => (
               <li key={index}>
                 {t}
-                <button
-                  className="todo-button"
-                  onClick={() => moveTask('completed', 'todo', t)}
-                >
-                  To-Do
-                </button>
-                <button
-                  className="ongoing-button"
-                  onClick={() => moveTask('completed', 'ongoing', t)}
-                >
-                  Ongoing
-                </button>
+                {/* No buttons for tasks in the Completed section */}
               </li>
             ))}
           </ul>
